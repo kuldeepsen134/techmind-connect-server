@@ -69,7 +69,7 @@ exports.imageController = async (req, res) => {
             model: "dall-e-3",
             prompt: `generate a image of ${text}`,
             n: 1,
-            size: "256x256",
+            size: "1024x1024",
         });
         if (image) {
             if (image.data[0]) {
