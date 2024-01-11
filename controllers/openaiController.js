@@ -66,10 +66,10 @@ exports.imageController = async (req, res) => {
     try {
         const { text } = req.body;
         const image = await openai.images.generate({
-            model: "dall-e-3",
+            model: "dall-e-2",
             prompt: `generate a image of ${text}`,
             n: 1,
-            size: "1024x1024",
+            size: "256x256",
         });
         if (image) {
             if (image.data[0]) {
