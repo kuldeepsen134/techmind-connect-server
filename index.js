@@ -42,7 +42,7 @@ app.post('/api/v1/openai/talkbot', async (req, res) => {
     const { message } = req.body;
     const response = await openai.chat.completions.create({
       messages: [{ role: 'user', content: `${message}` }],
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-3.5-turbo-1106',
     });
     if (response) {
       if (response.choices[0].message.content) {
@@ -50,6 +50,7 @@ app.post('/api/v1/openai/talkbot', async (req, res) => {
       }
     }
   } catch (err) {
+    console.log('Erorr>>>>>>',err)
     return res.status(404).json({ message: 'Request failed with status code 404' });
   }
 })
