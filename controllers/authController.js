@@ -84,4 +84,4 @@ exports.logoutController = async (req, res) => {
         success: true,
         message: 'Logout Successfully',
     });
-}
+};
